@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="view">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+	<div id="itcast">
+	    <div class="section">Some section</div>
+	    <div class="section">Some section</div>
+	    <div class="section">Some section</div>
+	    <div class="section">Some section</div>
+	</div>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery.fullPage.min.js"></script>
+	<script>
+
+		$('#itcast').fullpage({
+			 sectionsColor : ['red', 'blue', 'pink', 'yellow']
+		});
+
+		// 一般情况下jQuery插件需要咱们HTML结构必须符它要求的结构
+
+		// $('div').animate({
+		// 	width: '100px',
+		// 	hei
+		// });
+	</script>
+</body>
+</html>

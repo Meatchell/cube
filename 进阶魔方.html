@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body,html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            perspective: 1500px;
+            background: linear-gradient(to bottom, #59cc32 0% , #aab337 100%);
+        }
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0px auto;
+            position: absolute;
+            top: 220px;
+            left: 50%;
+            margin-left: -100px;
+            transform-origin: center;
+            transform-style: preserve-3d;
+            transform: rotateY(30deg) rotateX(30deg);
+            animation: move 8s linear infinite;
+
+        }
+        .box>div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top:0;
+            left: 0;
+            background: rgba(135, 249, 200, 0);
+            text-align: center;
+            line-height: 150px;
+            box-sizing: border-box;
+            transition: transform 3s;
+
+            border: 25px groove #1a2810;
+            box-shadow: inset 0 0 1px 6px rgba(26, 40, 16, 0.8),
+            inset 0 0 1px 12px rgba(22, 11, 40, 0.8),
+            inset 0 0 1px 18px rgba(123, 144, 248, 0.8),
+            inset 0 0 1px 24px rgba(0, 0, 255, 0.8),
+            0 0 80px 10px rgba(40, 17, 19, 0.8);
+        }
+
+       .box div:nth-child(1){
+            transform: rotateX(90deg) translateZ(-100px);
+        }
+        .box div:nth-child(2){
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .box div:nth-child(3){
+            transform: rotateY(90deg) translateZ(-100px);
+        }
+        .box div:nth-child(4){
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .box div:nth-child(5){
+            transform: translateZ(-100px);
+        }
+        .box div:nth-child(6){
+            transform:  translateZ(100px);
+
+
+        }
+        .box:hover div:nth-child(1){
+            transform: rotateX(90deg) translateZ(-400px);
+        }
+        .box:hover div:nth-child(2){
+            transform: rotateX(90deg) translateZ(400px);
+
+        }
+        .box:hover div:nth-child(3){
+            transform: rotateY(90deg) translateZ(-400px);
+        }
+        .box:hover div:nth-child(4){
+            transform: rotateY(90deg) translateZ(400px);
+        }
+        .box:hover div:nth-child(5){
+            transform:  translateZ(-400px);
+        }
+        .box:hover div:nth-child(6){
+            transform: translateZ(400px);
+        }
+        /*中盒子*/
+        .box>span {
+            display: block;
+            width: 160px;
+            height: 160px;
+            position: absolute;
+            top:20px;
+            left: 20px;
+            background: rgba(40, 17, 19, 0.9);
+            box-sizing: border-box;
+            transition: all 3s 3s;
+
+
+            border: 10px groove rgba(247, 249, 16, 0.93);
+            box-shadow: inset 0 0 1px 3px rgba(241, 249, 28, 0.97),
+            inset 0 0 1px 6px rgba(242, 121, 41, 0.89),
+            inset 0 0 1px 10px rgba(248, 26, 30, 0.8),
+            inset 0 0 1px 12px rgba(0, 0, 255, 0.8),
+            0 0 20px 5px rgba(249, 233, 244, 0.8);
+        }
+        .box span:nth-child(7){
+            transform: rotateX(90deg) translateZ(-80px);
+            background: rgba(40, 17, 19, 0);
+        }
+        .box span:nth-child(8){
+            transform: rotateX(90deg) translateZ(80px);
+        }
+        .box span:nth-child(9){
+            transform: rotateY(90deg) translateZ(-80px);
+        }
+        .box span:nth-child(10){
+            transform: rotateY(90deg) translateZ(80px);
+        }
+        .box span:nth-child(11){
+            transform: translateZ(-80px);
+        }
+        .box span:nth-child(12) {
+            transform: translateZ(80px);
+        }
+        .box span:nth-child(13){
+            transform: rotateX(90deg) translateZ(-80px);
+        }
+        .box span:nth-child(14) {
+            transform: translateZ(-80px);
+            background: rgba(40, 17, 19, 0);
+
+        }
+
+        .box:hover span:nth-child(7){
+            transform: rotateX(-45deg) rotateY(45deg) translateZ(300px)  ;
+        }
+        .box:hover span:nth-child(8){
+            transform: rotateX(-45deg) rotateY(-45deg) translateZ(300px) ;
+        }
+        .box:hover span:nth-child(9){
+            transform: rotateX(45deg) rotateY(45deg) translateZ(300px) ;
+        }
+        .box:hover span:nth-child(10){
+            transform: rotateX(45deg) rotateY(-45deg) translateZ(300px);
+        }
+        .box:hover span:nth-child(11){
+            transform: rotateX(45deg) rotateY(45deg) translateZ(-300px) ;
+        }
+        .box:hover span:nth-child(12) {
+            transform:  rotateX(45deg) rotateY(-45deg)translateZ(-300px);
+        }
+        .box:hover span:nth-child(13) {
+            display: block;
+            transform:  rotateX(-45deg) rotateY(-45deg)translateZ(-300px);
+        }
+        .box:hover span:nth-child(14) {
+            display: block;
+            transform:  rotateX(-45deg) rotateY(45deg)translateZ(-350px);
+        }
+
+        /*魔方*/
+        i {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            /*box-shadow: 20px 20px 40px white,inset 20px 20px 40px white;*/
+        }
+
+        .box>i:nth-child(15){
+            transform: rotateX(90deg) translateZ(-50px);
+            background: blue;
+
+        }
+        .box>i:nth-child(16){
+            transform: rotateX(90deg) translateZ(50px);
+            background: red;
+        }
+        .box>i:nth-child(17){
+            transform: rotateY(90deg) translateZ(-50px);
+            background: yellow;
+        }
+        .box>i:nth-child(18){
+            transform: rotateY(90deg) translateZ(50px);
+            background: orange;
+        }
+        .box>i:nth-child(19){
+            transform: translateZ(-50px);
+            background: #000;
+        }
+        .box>i:nth-child(20){
+            transform:  translateZ(50px);
+            background: lime;
+        }
+        em {
+            display: inline-block;
+            box-sizing: border-box;
+            width: 33.33%;
+            height: 33.33%;
+            border: 5px solid #fff;
+            border-radius: 3px;
+        }
+        @keyframes move {
+            from {
+                transform: rotateX(0deg) rotateY(360deg)
+            }
+            to {
+                transform: rotateX(360deg) rotateY(0deg)
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="top">top</div>
+    <div class="bottom">bottom</div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+    <div class="back">back</div>
+    <div class="frant">front</div>
+
+    <span class="top"></span>
+    <span class="bottom"></span>
+    <span class="left"></span>
+    <span class="right"></span>
+    <span class="back"></span>
+    <span class="frant"></span>
+    <span class="back"></span>
+    <span class="frant"></span>
+
+    <i class="boxm">
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+    </i>
+    <i class="boxm">
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+    </i>
+    <i class="boxm">
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+    </i>
+    <i class="boxm">
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+    </i>
+    <i class="boxm">
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+    </i>
+    <i class="boxm">
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+        <em class="inner"></em>
+    </i>
+
+</div>
+
+</body>
+</html>
